@@ -7,19 +7,19 @@ $(document).ready(function(){
     {
       title:"Sun raha hai na tu",
       artist:"Shreya ghosal",
-      mp3:"dist/js/jPlayer/sunrahahai.mp3",
+      mp3:"/songs/sunrahahai.mp3",
       poster: ""
     },
     {
       title:"Shubhaarambh",
       artist:"Shreya ghosal",
-      mp3:"dist/js/jPlayer/shubhaarambh.mp3",
+      mp3:"/songs/shubhaarambh.mp3",
       poster: ""
     },
     {
       title:"title2",
       artist:"Shreya ghosal",
-      mp3:"dist/js/jPlayer/sunrahahai.mp3",
+      mp3:"/songs/sunrahahai.mp3",
       poster: ""
     }
   ], {
@@ -27,7 +27,7 @@ $(document).ready(function(){
       enableRemoveControls: true,
       autoPlay: true
     },
-    swfPath: "dist/js/jPlayer",
+    swfPath: "/songs",
     supplied: "webmv, ogv, m4v, oga, mp3",
     smoothPlayBar: true,
     keyEnabled: true,
@@ -75,11 +75,11 @@ $(document).ready(function(){
     ready: function () {
       $(this).jPlayer("setMedia", {
         title: "The Asgardian Hammer",
-        m4v: "dist/avi/vd.mp4",
-        poster: "dist/avi/vd.jpg"
+        m4v: "/video/vd.mp4",
+        poster: "/images/vd.jpg"
       });
     },
-    swfPath: "dist/js/jPlayer",
+    swfPath: "/video",
     supplied: "webmv, ogv, m4v",
     size: {
       width: "100%",

@@ -21,10 +21,11 @@
     <link href="{{asset('css/contact-app-page.css')}}" rel="stylesheet">
     <link href="{{asset('css/footable.bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/tab-page.css')}}" rel="stylesheet">
-
+    <link href="{{asset('css/bootstrap-tagsinput.css')}}" rel="stylesheet">
+    @yield('css')
     <link href="{{asset('css/fullcalendar.css')}}" rel="stylesheet">
 
-
+    <script type="text/javascript" src="{{asset('js/angular.min.js')}}"></script>
     <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -37,11 +38,11 @@
 <style>
     @font-face {
 	font-family: 'themify';
-	src:url('fonts/themify.eot?-fvbane');
-	src:url('fonts/themify.eot?#iefix-fvbane') format('embedded-opentype'),
-		url('fonts/themify.woff?-fvbane') format('woff'),
-		url('fonts/themify.ttf?-fvbane') format('truetype'),
-		url('fonts/themify.svg?-fvbane#themify') format('svg');
+	src:url('{{asset("fonts/themify.eot")}}?-fvbane');
+	src:url('{{asset("fonts/themify.eot")}}?#iefix-fvbane') format('embedded-opentype'),
+		url('{{asset("fonts/themify.woff")}}?-fvbane') format('woff'),
+		url('{{asset("fonts/themify.ttf")}}?-fvbane') format('truetype'),
+		url('{{asset("fonts/themify.svg")}}?-fvbane#themify') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -91,7 +92,7 @@
                         </b>
                         <!--End Logo icon -->
                          <!-- Light Logo text -->    
-                         <img src="{{asset('images/logo-light-text.png')}}" class="light-logo" alt="homepage"></span> </a>
+                         <span class="hide-menu"><img src="{{asset('images/logo-light-text.png')}}" class="light-logo" alt="homepage"></span> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -102,8 +103,7 @@
                     <!-- ============================================================== -->
                     <ul class="navbar-nav mr-auto">
                         <!-- This is  -->
-                        <li class="nav-item"> <a class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
-                        <li class="nav-item"> <a class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark" href="javascript:void(0)"><i class="icon-menu"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
@@ -121,7 +121,7 @@
                         <!-- Comment -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="http://eliteadmin.themedesigner.in/demos/bt4/music/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="ti-announcement"></i>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="ti-announcement"></i>
                                 <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
@@ -170,7 +170,7 @@
                         <!-- Messages -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="http://eliteadmin.themedesigner.in/demos/bt4/music/" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="ti-email"></i>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="ti-email"></i>
                                 <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
                             </a>
                             <div class="dropdown-menu mailbox dropdown-menu-right animated bounceInDown" aria-labelledby="2">
@@ -218,7 +218,7 @@
                         <!-- ============================================================== -->
                         <!-- mega menu -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle waves-effect waves-dark" href="http://eliteadmin.themedesigner.in/demos/bt4/music/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-layout-width-default"></i></a>
+                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-layout-width-default"></i></a>
                             <div class="dropdown-menu animated bounceInDown">
                                 <ul class="mega-dropdown-menu row">
                                     <li class="col-lg-3 col-xlg-2 m-b-30">
@@ -236,8 +236,8 @@
                                                     <div class="container"><img class="d-block img-fluid" src="{{asset('images/img3.jpg')}}" alt="Third slide"></div>
                                                 </div>
                                             </div>
-                                            <a class="carousel-control-prev" href="http://eliteadmin.themedesigner.in/demos/bt4/music/#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-                                            <a class="carousel-control-next" href="http://eliteadmin.themedesigner.in/demos/bt4/music/#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
                                         </div>
                                         <!-- End CAROUSEL -->
                                     </li>
@@ -325,7 +325,7 @@
                         <!-- User Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="http://eliteadmin.themedesigner.in/demos/bt4/music/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('images/1.jpg')}}" alt="user" class=""> <span class="hidden-md-down">Mark &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('images/1.jpg')}}" alt="user" class=""> <span class="hidden-md-down">Mark &nbsp;<i class="fa fa-angle-down"></i></span> </a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <!-- text-->
                                 <a href="/profile/contact-details#profile" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
@@ -336,7 +336,7 @@
                                 <!-- text-->
                                 <div class="dropdown-divider"></div>
                                 <!-- text-->
-                                <a href="http://eliteadmin.themedesigner.in/demos/bt4/music/pages-login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                                <a href="pages-login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
                                 <!-- text-->
                             </div>
                         </li>
@@ -402,23 +402,27 @@
                             </ul>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="/dashboard" aria-expanded="false"><i class="ti-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li><a href="/genre" aria-expanded="false"><i class="ti-music"></i>Geners</a>
+                        <li><a href="/genre" aria-expanded="false"><i class="ti-music"></i></i><span class="hide-menu">Geners</span></a>
                             
                         </li>
-                        <li> <a href="javascript:void(0)" aria-expanded="false"><i class="ti-microphone"></i>Albums</a>
+                        <li> <a href="/albums" aria-expanded="false"><i class="ti-microphone"></i></i><span class="hide-menu">Albums</span></a>
                            
                         </li>
-                        <li> <a  href="javascript:void(0)" aria-expanded="false"><i class="ti-user"></i><span >Albums</span></a>
+                        <li> <a  href="/artists" aria-expanded="false"><i class="ti-user"></i></i><span class="hide-menu">Artists</span></a>
                           
                         </li>
-                        
+                        <li> <a class="waves-effect waves-dark" href="/audio" aria-expanded="false"><i class="ti-music-alt"></i><span class="hide-menu">Audio</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="/videos" aria-expanded="false"><i class="ti-video-camera"></i><span class="hide-menu">Videos</span></a>
+                          
+                        </li>
                      
                        
                        
                         <li class="nav-small-cap">--- SUPPORT</li>
-                        <li> <a class="waves-effect waves-dark" href="http://eliteadmin.themedesigner.in/demos/bt4/documentation/documentation.html" aria-expanded="false"><i class="far fa-circle text-danger"></i><span class="hide-menu">Documentation</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="http://eliteadmin.themedesigner.in/demos/bt4/music/pages-login.html" aria-expanded="false"><i class="far fa-circle text-success"></i><span class="hide-menu">Log Out</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="http://eliteadmin.themedesigner.in/demos/bt4/music/pages-faq.html" aria-expanded="false"><i class="far fa-circle text-info"></i><span class="hide-menu">FAQs</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="http://eliteadmin.themedesigner.in/demos/bt4/documentation/documentation.html" aria-expanded="false"><i class="fa fa-circle-o text-danger"></i><span class="hide-menu">Documentation</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="pages-login.html" aria-expanded="false"><i class="fa fa-circle-o text-success"></i><span class="hide-menu">Log Out</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="pages-faq.html" aria-expanded="false"><i class="fa fa-circle-o text-info"></i><span class="hide-menu">FAQs</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -441,7 +445,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                    <h4 class="text-themecolor">{{ucfirst(explode("/",Request::path())[count(explode("/",Request::path()))-1] )}}</h4>
+                    <h4 class="text-themecolor">{{str_replace("-"," ",ucfirst(explode("/",Request::path())[count(explode("/",Request::path()))-1] ))}}</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
@@ -449,16 +453,18 @@
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                                 <?php $path='';?>
                                 @foreach (explode("/",Request::path() ) as $item)
-                                    {{$path=$path."/".$item}}
-                            <li class="breadcrumb-item active"><a href="{{$path}}">{{ucfirst($item)}}</a></li>
+                                    <?php $path=$path."/".$item;?>
+                            <li class="breadcrumb-item active"><a href="{{$path}}">{{ucfirst(str_replace("-"," ",$item))}}</a></li>
                                 @endforeach
-                               
-                            </ol>
-                        @if (explode("/",Request::path())[count(explode("/",Request::path()))-1]!='dashboard'&& explode("/",Request::path())[count(explode("/",Request::path()))-1]!='contact-details')
+                            
                         <form action="/{{explode("/",Request::path())[count(explode("/",Request::path()))-1]}}/add">
-                            <button type="submit" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button>
+                            @yield('createNew')
+            
+                           
                         </form>
-                        @endif
+                      
+                            </ol>
+                       
                         
                         </div>
                     </div>
@@ -531,7 +537,7 @@
             <div class="mplayer">
                 <div id="jp_container_N" class="bg-dark jp-video-270p">
                     <div class="jp-type-playlist">
-                        <div id="jplayer_N" class="jp-jplayer hide" style="width: 480px; height: 270px;"><img id="jp_poster_0" style="width: 480px; height: 270px; display: none;"><audio id="jp_audio_0" preload="metadata" src="http://eliteadmin.themedesigner.in/demos/bt4/music/dist/js/jPlayer/sunrahahai.mp3" title="Sun raha hai na tu" __idm_id__="702897153"></audio><video id="jp_video_0" preload="metadata" title="Sun raha hai na tu" style="width: 0px; height: 0px;"></video></div>
+                        <div id="jplayer_N" class="jp-jplayer hide" style="width: 480px; height: 270px;"><img id="jp_poster_0" style="width: 480px; height: 270px; display: none;"><audio id="jp_audio_0" preload="metadata" src="dist/js/jPlayer/sunrahahai.mp3" title="Sun raha hai na tu" __idm_id__="702897153"></audio><video id="jp_video_0" preload="metadata" title="Sun raha hai na tu" style="width: 0px; height: 0px;"></video></div>
                         <div class="jp-gui">
                             <div class="jp-interface">
                                 <div class="jp-controls">
@@ -646,11 +652,14 @@
         
             </script>
     <!--stickey kit -->
+ 
     <script type="text/javascript" src="{{asset('js/jquery.jplayer.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jplayer.playlist.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap-tagsinput.min.js')}}"></script>
+   
     <script type="text/javascript" src="{{asset('js/init.js')}}"></script>
 
-
+    @yield('js')
    
 
 

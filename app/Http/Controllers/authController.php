@@ -60,4 +60,37 @@ class authController extends Controller
     public function genre(){
         return view('genre');
     }
+    public function albums(){
+        return view('album');
+    }
+    public function addAlbums(){
+        return view('addAlbum');
+    }
+    public function detailsAlbum(){
+        return view('detailsAlbum');
+    }
+    public function artists(){
+        return view('artists.artists');
+    }
+    public function addArtist(){
+        return view('artists.addArtist');
+    }
+    public function artistDetails(){
+        return view('artists.artistDetails');
+    }
+    public function audio(){
+        return view('audio');
+    }
+    public function addAudio(){
+        return view('addAudio');
+    }
+    public function videos(){
+        return view('videos.videos');
+    }
+    public function videoDetails(){
+        return view('videos.videoDetails');
+    }
+    public function addVideos(){
+        return view('videos.addVideos');
+    }
 }
