@@ -11,32 +11,46 @@
 |
 */
 
-Route::get('/', 'authController@login');
-Route::get('/signup', 'authController@signup');
-Route::get('/forget-password', 'authController@recover');
-Route::get('/apps/calender', 'authController@calender');
-Route::get('/apps/chat', 'authController@chat');
-Route::get('/apps/tickets', 'authController@tickets');
-Route::get('/apps/contact', 'authController@contact');
-Route::get('/apps/contact-grid', 'authController@contactGrid');
-Route::get('/profile/contact-details', 'authController@contactDetails');
-Route::get('/genre', 'authController@genre');
-Route::get('/albums', 'authController@albums');
-Route::get('/albums/add', 'authController@addAlbums');
-Route::get('/albums/details-Album', 'authController@detailsAlbum');
-Route::get('/artists', 'authController@artists');
-Route::get('/artists/details', 'authController@artistDetails');
-Route::get('/artists/add', 'authController@addArtist');
-Route::get('/audio', 'authController@audio');
-Route::get('/audio/add', 'authController@addAudio');
-Route::get('/videos', 'authController@videos');
-Route::get('/videos/add', 'authController@addVideos');
-Route::get('/videos/details', 'authController@videoDetails');
-Route::get('/genre/add', 'authController@addGenre');
-Route::get('/Ui-Elements/cards', 'authController@cards');
-Route::get('/Ui-Elements/User-Card', 'authController@userCards');
-Route::get('/Ui-Elements/buttons', 'authController@buttons');
-Route::get('/Ui-Elements/modals', 'authController@modals');
-Route::get('/Ui-Elements/tabs', 'authController@tabs');
-Route::get('/Ui-Elements/Tooltip-Popover', 'authController@tooltip');
-Route::get('/dashboard', 'authController@dashboard');
+Route::get('/', 'authController@login')->middleware('SessionHandler');
+Route::get('/signup', 'authController@signup')->middleware('SessionHandler');
+Route::get('/forget-password', 'authController@recover')->middleware('SessionHandler');
+Route::get('/apps/calender', 'authController@calender')->middleware('SessionHandler');
+Route::get('/apps/chat', 'authController@chat')->middleware('SessionHandler');
+Route::get('/apps/tickets', 'authController@tickets')->middleware('SessionHandler');
+Route::get('/apps/contact', 'authController@contact')->middleware('SessionHandler');
+Route::get('/apps/contact-grid', 'authController@contactGrid')->middleware('SessionHandler');
+Route::get('/profile/contact-details', 'authController@contactDetails')->middleware('SessionHandler');
+Route::get('/genre', 'authController@genre')->middleware('SessionHandler');
+Route::get('/albums', 'authController@albums')->middleware('SessionHandler');
+Route::get('/albums/add', 'authController@addAlbums')->middleware('SessionHandler');
+Route::get('/albums/details-Album', 'authController@detailsAlbum')->middleware('SessionHandler');
+Route::get('/artists', 'authController@artists')->middleware('SessionHandler');
+Route::get('/artists/details', 'authController@artistDetails')->middleware('SessionHandler');
+Route::get('/artists/add', 'authController@addArtist')->middleware('SessionHandler');
+Route::get('/audio', 'authController@audio')->middleware('SessionHandler');
+Route::get('/audio/add', 'authController@addAudio')->middleware('SessionHandler');
+Route::get('/videos', 'authController@videos')->middleware('SessionHandler');
+Route::get('/videos/add', 'authController@addVideos')->middleware('SessionHandler');
+Route::get('/videos/details', 'authController@videoDetails')->middleware('SessionHandler');
+Route::get('/genre/add', 'authController@addGenre')->middleware('SessionHandler');
+Route::get('/Ui-Elements/cards', 'authController@cards')->middleware('SessionHandler');
+Route::get('/Ui-Elements/User-Card', 'authController@userCards')->middleware('SessionHandler');
+Route::get('/Ui-Elements/buttons', 'authController@buttons')->middleware('SessionHandler');
+Route::get('/Ui-Elements/modals', 'authController@modals')->middleware('SessionHandler');
+Route::get('/Ui-Elements/tabs', 'authController@tabs')->middleware('SessionHandler');
+Route::get('/Ui-Elements/Tooltip-Popover', 'authController@tooltip')->middleware('SessionHandler');
+Route::get('/dashboard', 'authController@dashboard')->middleware('SessionHandler');
+
+
+//Apis
+Route::prefix('api/v1')->namespace('API')->group(function () {
+    // Login
+    Route::post('/login','ApiController@postLogin');
+    // Register
+    Route::post('/register','ApiController@postRegister');
+    // Protected with APIToken Middleware
+    Route::middleware('APIToken')->group(function () {
+      // Logout
+      Route::post('/logout','ApiController@postLogout');
+    });
+  });
